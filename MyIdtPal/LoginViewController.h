@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
-@property NSString *userID;
 
 @property (weak, nonatomic) IBOutlet UILabel *confirmLabel;
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;

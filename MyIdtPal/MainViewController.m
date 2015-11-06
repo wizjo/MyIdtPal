@@ -8,9 +8,10 @@
 
 #import "MainViewController.h"
 #import <AWSCognito/AWSCognito.h>
+#import "AFNetworking.h"
+#import "DoneCell.h"
 
 @interface MainViewController ()
-@property (nonatomic) AWSCognitoCredentialsProvider *credentialsProvider;
 
 @end
 
@@ -19,8 +20,89 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"main view controller did load");
-    // Do any additional setup after loading the view.
+    NSLog(@"api token received: %@", self.apiToken);
+
+    self.teamsUrl = @"https://idonethis.com/api/v0.1/teams/crashlytics/";
+    self.descriptionLabel.text = @"Fabric's Dones today";
+    [self.addButton addTarget:self action:@selector(createADone:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self fetchDones];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"donesTableEmbed"]) {
+        self.donesTableViewController = segue.destinationViewController;
+    }
+}
+
+- (void)fetchDones {
+    NSString *donesUrl = @"https://idonethis.com/api/v0.1/dones/?team=crashlytics";
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"Token %@", self.apiToken] forHTTPHeaderField:@"Authorization"];
+    
+    [manager GET:donesUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.donesTableViewController.dones = responseObject[@"results"];
+        [self.donesTableViewController.tableView reloadData];
+        NSLog(@"fetched dones!");
+        [self.donesTableViewController viewWillAppear:true];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void)fetchTeams {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", self.apiToken] forHTTPHeaderField:@"Authorization"];
+    
+    [manager GET:self.teamsUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSDictionary *firstOrg = [responseObject[@"results"] objectAtIndex:0];
+        NSLog(@"org name: %@, url: %@", firstOrg[@"name"], firstOrg[@"url"]);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
+}
+
+- (IBAction)createADone:(id)sender {
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    
+    [self postADone:self.doneTextField.text forDate:dateString];
+    
+    self.doneTextField.text = @"";
+    [self.doneTextField resignFirstResponder];
+}
+
+- (void)postADone:(NSString *)body forDate:(NSString *)forDate {
+    NSLog(@"body: %@, forDate: %@", body, forDate);
+    
+    NSString *postUrl = @"https://idonethis.com/api/v0.1/dones/";
+    NSDictionary *params = @{@"raw_text":body, @"team":self.teamsUrl, @"done_date":forDate};
+    NSLog(@"params: %@", params);
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"Token %@", self.apiToken] forHTTPHeaderField:@"Authorization"];
+    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
+    [manager POST:postUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // append new done
+        NSArray *newDones = [self.donesTableViewController.dones arrayByAddingObject:@{@"owner":@"me", @"raw_text":body}];
+        self.donesTableViewController.dones = newDones;
+        [self.donesTableViewController.tableView reloadData];
+        NSLog(@"post success!");
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,16 +110,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-// Re-initialize Cognito client. Need this b/c default Fabric.with doesn't initialize correctly.
-- (void)configureAuthProvider {
-    self.credentialsProvider = [[AWSCognitoCredentialsProvider alloc]
-                                initWithRegionType:AWSRegionUSEast1
-                                identityPoolId:@"us-east-1:60a5010c-a3de-4f6f-a8ff-f52ec07f951d"];
-    
-    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:self.credentialsProvider];
-    
-    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
-}
 
 /*
 #pragma mark - Navigation

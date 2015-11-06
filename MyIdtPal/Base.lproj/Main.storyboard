@@ -37,14 +37,14 @@
                                 <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="qwE-rD-onM" kind="push" identifier="showMainView" id="OkA-Bb-dJw"/>
+                                    <segue destination="qwE-rD-onM" kind="push" identifier="showMainView" id="uGh-dx-N0d"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Confirm your token" id="QiA-d7-mKn"/>
+                    <navigationItem key="navigationItem" title="Confirm your IDT token" id="QiA-d7-mKn"/>
                     <connections>
                         <outlet property="confirmLabel" destination="hF7-cO-ZLt" id="7om-CQ-z10"/>
                         <outlet property="nextButton" destination="pdg-Pu-JVy" id="o3W-JZ-N1d"/>
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="644" y="245"/>
         </scene>
-        <!--Main-->
+        <!--Main View-->
         <scene sceneID="Q1U-RZ-Iga">
             <objects>
-                <viewController title="Main" id="qwE-rD-onM" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController title="Main View" id="qwE-rD-onM" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VGm-wp-45R"/>
                         <viewControllerLayoutGuide type="bottom" id="hOj-YQ-7nc"/>
@@ -66,19 +66,98 @@
                     <view key="view" contentMode="scaleToFill" id="JjU-C9-W5B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRo-my-pLv">
+                                <rect key="frame" x="0.0" y="91" width="320" height="477"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="cYj-hU-Tcw" kind="embed" identifier="donesTableEmbed" id="BEw-My-Jfw"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epT-UA-pe0">
+                                <rect key="frame" x="271" y="101" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.29507547649999999" green="0.45970606559999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What did you get done today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IIe-3W-DVz">
+                                <rect key="frame" x="4" y="101" width="263" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your dones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AO0-k9-12e">
+                                <rect key="frame" x="4" y="72" width="280" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="MyIDTPal" id="aEd-zP-2gr"/>
+                    <connections>
+                        <outlet property="addButton" destination="epT-UA-pe0" id="DqT-s8-FqB"/>
+                        <outlet property="descriptionLabel" destination="AO0-k9-12e" id="YIF-QA-vJQ"/>
+                        <outlet property="doneTextField" destination="IIe-3W-DVz" id="rLZ-iq-NMI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXv-TX-3N2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="989"/>
+            <point key="canvasLocation" x="862" y="989"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--DonesTable-->
+        <scene sceneID="XdC-rM-DtJ">
+            <objects>
+                <tableViewController title="DonesTable" id="cYj-hU-Tcw" customClass="DonesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="hBE-13-cjm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoneCell" rowHeight="55" id="ICN-j6-UQ5" customClass="DoneCell">
+                                <rect key="frame" x="0.0" y="28" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ICN-j6-UQ5" id="3Zy-bO-D8i">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="what did you get done today" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acB-Cq-ruE">
+                                            <rect key="frame" x="16" y="0.0" width="304" height="47"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="bodyLabel" destination="acB-Cq-ruE" id="uDy-JI-3Wn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cYj-hU-Tcw" id="HT5-pH-ymd"/>
+                            <outlet property="delegate" destination="cYj-hU-Tcw" id="NcY-Qi-D7p"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFR-cX-jW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="1622.5"/>
+        </scene>
+        <!--Confirmation Navigation-->
         <scene sceneID="Gmp-H8-XYh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LJz-4z-9DN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LJz-4z-9DN" userLabel="Confirmation Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FJ0-nS-Ksa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
