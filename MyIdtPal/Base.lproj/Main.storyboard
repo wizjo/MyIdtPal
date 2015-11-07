@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRo-my-pLv">
-                                <rect key="frame" x="0.0" y="91" width="320" height="477"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="424"/>
                                 <animations/>
                                 <connections>
                                     <segue destination="cYj-hU-Tcw" kind="embed" identifier="donesTableEmbed" id="BEw-My-Jfw"/>
@@ -116,7 +116,7 @@
             <objects>
                 <tableViewController title="DonesTable" id="cYj-hU-Tcw" customClass="DonesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="hBE-13-cjm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
