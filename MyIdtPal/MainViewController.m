@@ -90,7 +90,6 @@
     NSLog(@"params: %@", params);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:[NSString stringWithFormat:@"Token %@", self.apiToken] forHTTPHeaderField:@"Authorization"];
-    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     
     [manager POST:postUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // append new done

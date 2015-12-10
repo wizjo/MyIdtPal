@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <AWSCognito/AWSCognito.h>
+#import <Crashlytics/Crashlytics.h>
 #import <DigitsKit/DigitsKit.h>
 
 @interface AppDelegate ()
@@ -19,7 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Fabric with:@[[AWSCognito class], [Digits class]]];
+    [Fabric with:@[[AWSCognito class], [Crashlytics class], [Digits class]]];
 
     return YES;
 }
