@@ -6,6 +6,7 @@ framework module DigitsKit {
 
     link framework "AddressBook"
 
+    header "DGTAPIClient.h"
     header "DGTAppearance.h"
     header "DGTAuthenticateButton.h"
     header "DGTAuthenticationConfiguration.h"

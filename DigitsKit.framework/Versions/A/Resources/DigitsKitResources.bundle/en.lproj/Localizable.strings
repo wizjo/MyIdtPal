@@ -1,3 +1,6 @@
+/* Label instructing customer on how to enter the code on digits.com */
+"ASSISTED_AUTH_INSTRUCTIONS" = "Visit %@ and enter the following code to sign into %@";
+
 /* Label before phone input field */
 "LABEL_ENTER_PHONE_NUMBER" = "What's your phone number?";
 
@@ -11,13 +14,13 @@
 "BUTTON_SENT_CONF_CODE" = "Sent confirmation code";
 
 /* Footnote disclaimer for send confirmation code screen */
-"FOOTNOTE_SEND_CONF_CODE" = "By tapping \"Send confirmation code\" above, <u>Digits by Twitter</u> will send you an SMS to confirm your phone number. Message & data rates may apply.";
+"FOOTNOTE_SEND_CONF_CODE" = "By tapping \"Send confirmation code\" above, <a href=\"https://www.digits.com\">Digits by Twitter</a> will send you an SMS to confirm your phone number. Message & data rates may apply.";
 
 /* Footnote disclaimer for call me to send a confirmation code screen */
-"FOOTNOTE_CONF_CODE_CALL_ME" = "By tapping \"Call me\" above, <u>Digits by Twitter</u> will send you a voice call to confirm your phone number. Call & data rates may apply.";
+"FOOTNOTE_CONF_CODE_CALL_ME" = "By tapping \"Call me\" above, <a href=\"https://www.digits.com\">Digits by Twitter</a> will send you a voice call to confirm your phone number. Call & data rates may apply.";
 
 /* Description that email is being added to a user's Digits profile  */
-"FOOTNOTE_EMAIL_DISCLOSURE" = "By tapping \"Continue\" you are adding this email to your Digits account. All your apps authenticated with Digits will have access to this email address, and their users will be able to discover you by email. Manage your account on <u>Digits.com</u>.";
+"FOOTNOTE_EMAIL_DISCLOSURE" =  "You agree that this app and <a href=\"https://www.digits.com/settings\">all apps listed in your Digits account</a> can access this email address and their users can discover you by email.";
 
 /* Label before confirmation code input field */
 "LABEL_ENTER_CONF_CODE" = "We sent you a code.";
@@ -27,6 +30,15 @@
 
 /* Label before email input field */
 "LABEL_ENTER_EMAIL" = "Enter your email.";
+
+/* Create account button title */
+"BUTTON_CREATE_ACCOUNT" = "Create account";
+
+/* Creating account button title */
+"BUTTON_CREATING_ACCOUNT" = "Creating account";
+
+/* Created account button title */
+"BUTTON_CREATED_ACCOUNT" = "Created account";
 
 /* Button title to indicate moving forward to the next step  */
 "BUTTON_CONTINUE" = "Continue";
@@ -50,9 +62,13 @@
 "BUTTON_RESEND_CONF_CODE" = "Request another.";
 
 /* Footnote when creating account */
-"FOOTNOTE_CREATE_ACCOUNT" = "By tapping \"Continue\" above, you agree to the <u>Terms of Service</u>, <u>Privacy Policy</u>, and <u>Cookies Policy</u> of Digits by Twitter, and that other users of %@ can discover you by phone number and/or email.";
+"FOOTNOTE_CREATE_ACCOUNT" = "By tapping \"Create account\" above, you agree to the <a href=\"https://twitter.com/tos\">Terms of Service</a>, <a href=\"https://twitter.com/privacy\">Privacy Policy</a>, and <a href=\"https://support.twitter.com/articles/20170514\">Cookies Policy</a> of <a href=\"https://www.digits.com\">Digits by Twitter</a>, to share your phone number with %@, and that other users of %@ can discover you by phone number.";
 
-"FOOTNOTE_TOS_UPDATE" = "By tapping \"Continue\" above, you agree to the updated <u>Terms of Service</u>, <u>Privacy Policy</u>, and <u>Cookies Policy</u> of Digits by Twitter, and that other users of %@ can discover you by phone number and/or email.";
+/* Footnote when logging into an existing account */
+"FOOTNOTE_LOGIN" = "By tapping \"Continue\", your <a href=\"https://www.digits.com/settings\">Digits phone number and/or email address</a> will be shared with %@ and other users of %@ can discover you by phone number and/or email.";
+
+/* Footnote when logging into an existing account but the terms of service have changed */
+"FOOTNOTE_TOS_UPDATE" = "By tapping \"Continue\", you agree to the Terms of Service, Privacy Policy, and Cookies Policy of Digits by Twitter, to share your <a href=\"https://www.digits.com/settings\">Digits phone number and/or email address</a> with %@, and that other users of %@ can discover you by phone number and/or email.";
 
 /* Text to be inserted when the name of the app is unknown in the sentence: "... other users of [app name] can discover you..." */
 "PARTIAL_FOOTNOTE_THIS_APP" = "this app";
@@ -105,7 +121,7 @@
 "LABEL_ENTER_2_STEP_VERIFICATION_CODE" = "Enter 2-step verification code.";
 
 /* PIN Code entry screen footer label */
-"FOOTNOTE_2_STEP_VERIFICATION_CODE" = "You have previously set a 2-step verification code on <u>digits.com</u>";
+"FOOTNOTE_2_STEP_VERIFICATION_CODE" = "You have previously set a 2-step verification code on <a href=\"https://www.digits.com/settings\">digits.com</a>";
 
 /* PIN Code field placeholder */
 "PLACEHOLDER_2_STEP_VERIFICATION_CODE" = "Verification code";
