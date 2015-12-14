@@ -101,6 +101,8 @@
 }
 
 - (void)synchronizeDataset {
+    self.nextButton.userInteractionEnabled = NO;
+    
     // Avoid keeping a reference if the ViewController is popped
     // before a sync completes.
     LoginViewController* __weak weakSelf = self;
@@ -118,6 +120,8 @@
                 }
             });
         }
+        
+        self.nextButton.userInteractionEnabled = YES;
         
         return nil;
     }];

@@ -20,10 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"api token received: %@", self.apiToken);
-
     self.teamsUrl = @"https://idonethis.com/api/v0.1/teams/crashlytics/";
-    self.descriptionLabel.text = @"Fabric's Dones today";
     [self.addButton addTarget:self action:@selector(createADone:) forControlEvents:UIControlEventTouchUpInside];
 
     [self fetchDones];
@@ -46,9 +43,11 @@
     [manager GET:donesUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.donesTableViewController.dones = responseObject[@"results"];
         [self.donesTableViewController.tableView reloadData];
+        self.descriptionLabel.text = @"Fabric's Dones today";
         NSLog(@"fetched dones!");
         [self.donesTableViewController viewWillAppear:true];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        self.descriptionLabel.text = @"iDoneThis ran into a problem :( Try post a done?";
         NSLog(@"Error: %@", error);
     }];
 }
@@ -57,7 +56,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", self.apiToken] forHTTPHeaderField:@"Authorization"];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"Token %@", self.apiToken] forHTTPHeaderField:@"Authorization"];
     
     [manager GET:self.teamsUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -92,6 +91,7 @@
     [manager.requestSerializer setValue:[NSString stringWithFormat:@"Token %@", self.apiToken] forHTTPHeaderField:@"Authorization"];
     
     [manager POST:postUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        self.descriptionLabel.text = @"Fabric's Dones today";
         // append new done
         NSArray *newDones = [self.donesTableViewController.dones arrayByAddingObject:@{@"owner":@"me", @"raw_text":body}];
         self.donesTableViewController.dones = newDones;
