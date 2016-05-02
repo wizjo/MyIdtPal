@@ -10,7 +10,6 @@
 		889A08862F41697053790931 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8805FF57CE2C76EDD498F3DF /* libPods.a */; };
 		B81AAF941BECF6CC0073C8D7 /* DoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B81AAF931BECF6CC0073C8D7 /* DoneCell.m */; };
 		B81AAF971BED04320073C8D7 /* DonesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81AAF961BED04320073C8D7 /* DonesTableViewController.m */; };
-		B81CC58C1C175E5900AFC9F4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81CC58B1C175E5900AFC9F4 /* Crashlytics.framework */; };
 		B8B47D3E1BEBF1B900E8D942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B47D3D1BEBF1B900E8D942 /* main.m */; };
 		B8B47D411BEBF1B900E8D942 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B47D401BEBF1B900E8D942 /* AppDelegate.m */; };
 		B8B47D471BEBF1B900E8D942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B47D451BEBF1B900E8D942 /* Main.storyboard */; };
@@ -20,12 +19,6 @@
 		B8B47D621BEBF1B900E8D942 /* MyIdtPalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B47D611BEBF1B900E8D942 /* MyIdtPalUITests.m */; };
 		B8B47D711BEBF1E300E8D942 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B47D701BEBF1E300E8D942 /* LoginViewController.m */; };
 		B8B47D741BEBFABE00E8D942 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B47D731BEBFABE00E8D942 /* MainViewController.m */; };
-		B8B47D791BEBFB4100E8D942 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B47D761BEBFB4100E8D942 /* Fabric.framework */; };
-		B8B47D7A1BEBFB4100E8D942 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B47D771BEBFB4100E8D942 /* AWSCognito.framework */; };
-		B8B47D7B1BEBFB4100E8D942 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B47D781BEBFB4100E8D942 /* AWSCore.framework */; };
-		B8B47D7F1BEBFC0F00E8D942 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B47D7C1BEBFC0F00E8D942 /* DigitsKit.framework */; };
-		B8B47D801BEBFC0F00E8D942 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8B47D7D1BEBFC0F00E8D942 /* DigitsKitResources.bundle */; };
-		B8B47D811BEBFC0F00E8D942 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B47D7E1BEBFC0F00E8D942 /* TwitterCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +46,6 @@
 		B81AAF931BECF6CC0073C8D7 /* DoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoneCell.m; sourceTree = "<group>"; };
 		B81AAF951BED04320073C8D7 /* DonesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonesTableViewController.h; sourceTree = "<group>"; };
 		B81AAF961BED04320073C8D7 /* DonesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonesTableViewController.m; sourceTree = "<group>"; };
-		B81CC58B1C175E5900AFC9F4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B8B47D391BEBF1B900E8D942 /* MyIdtPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyIdtPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B47D3D1BEBF1B900E8D942 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8B47D3F1BEBF1B900E8D942 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,12 +64,6 @@
 		B8B47D701BEBF1E300E8D942 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B8B47D721BEBFABE00E8D942 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B8B47D731BEBFABE00E8D942 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B8B47D761BEBFB4100E8D942 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		B8B47D771BEBFB4100E8D942 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
-		B8B47D781BEBFB4100E8D942 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
-		B8B47D7C1BEBFC0F00E8D942 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
-		B8B47D7D1BEBFC0F00E8D942 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
-		B8B47D7E1BEBFC0F00E8D942 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B47D811BEBFC0F00E8D942 /* TwitterCore.framework in Frameworks */,
-				B8B47D7A1BEBFB4100E8D942 /* AWSCognito.framework in Frameworks */,
-				B8B47D791BEBFB4100E8D942 /* Fabric.framework in Frameworks */,
-				B8B47D7B1BEBFB4100E8D942 /* AWSCore.framework in Frameworks */,
-				B8B47D7F1BEBFC0F00E8D942 /* DigitsKit.framework in Frameworks */,
 				889A08862F41697053790931 /* libPods.a in Frameworks */,
-				B81CC58C1C175E5900AFC9F4 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,13 +112,6 @@
 		B8B47D301BEBF1B900E8D942 = {
 			isa = PBXGroup;
 			children = (
-				B81CC58B1C175E5900AFC9F4 /* Crashlytics.framework */,
-				B8B47D7C1BEBFC0F00E8D942 /* DigitsKit.framework */,
-				B8B47D7D1BEBFC0F00E8D942 /* DigitsKitResources.bundle */,
-				B8B47D7E1BEBFC0F00E8D942 /* TwitterCore.framework */,
-				B8B47D761BEBFB4100E8D942 /* Fabric.framework */,
-				B8B47D771BEBFB4100E8D942 /* AWSCognito.framework */,
-				B8B47D781BEBFB4100E8D942 /* AWSCore.framework */,
 				B8B47D3B1BEBF1B900E8D942 /* MyIdtPal */,
 				B8B47D551BEBF1B900E8D942 /* MyIdtPalTests */,
 				B8B47D601BEBF1B900E8D942 /* MyIdtPalUITests */,
@@ -218,6 +191,7 @@
 				B8B47D361BEBF1B900E8D942 /* Frameworks */,
 				B8B47D371BEBF1B900E8D942 /* Resources */,
 				B8B47D751BEBFB2D00E8D942 /* ShellScript */,
+				D51C4CFE744862BF2CBC12B5 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B47D801BEBFC0F00E8D942 /* DigitsKitResources.bundle in Resources */,
 				B8B47D4C1BEBF1B900E8D942 /* LaunchScreen.storyboard in Resources */,
 				B8B47D491BEBF1B900E8D942 /* Assets.xcassets in Resources */,
 				B8B47D471BEBF1B900E8D942 /* Main.storyboard in Resources */,
@@ -362,7 +335,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run acb9d34f34fc9654def83f7ebb363634f0481243 ead0e38b31ad92efee16c6cfdbbd9fdde10785ecf16c93669ed5af0de274ae3d";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" acb9d34f34fc9654def83f7ebb363634f0481243 ead0e38b31ad92efee16c6cfdbbd9fdde10785ecf16c93669ed5af0de274ae3d";
+		};
+		D51C4CFE744862BF2CBC12B5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

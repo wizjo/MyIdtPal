@@ -20,11 +20,31 @@ PODS:
   - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AWSCognito (2.3.6):
+    - AWSCore (= 2.3.6)
+  - AWSCore (2.3.6)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Digits (1.15.3):
+    - TwitterCore (= 1.15.3)
+  - Fabric (1.6.7)
+  - TwitterCore (1.15.3):
+    - Fabric
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - AWSCognito
+  - Crashlytics
+  - Digits
+  - Fabric
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  AWSCognito: af54fe65171c7c994c134e5d29b1ee60ee234825
+  AWSCore: 917d84b32974136194a905b98c0ae25c9f3350b8
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Digits: 9823f8aad766c0aa824fac9b08938e22bc635fac
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  TwitterCore: cce24b3c798993ccde72787ea79ea9a478b284e4
 
 COCOAPODS: 0.39.0
